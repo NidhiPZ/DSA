@@ -27,13 +27,13 @@ void enqueue(int num)
         front = rear = 0;
         que[rear] = num;
     }
-    else if(((rear+1)%N) == front)
+    else if(((rear+1)%N) == front)    // Check if the queue is full
     {
         printf("Queue is full");
     }
     else
     {
-        rear= (rear+1)%N;
+        rear= (rear+1)%N;   // Circular increment of rear
         que[rear] = num;
     }
 }
@@ -43,14 +43,14 @@ void dequeue()
     {
         printf("Queue is empty");
     }
-    else if(front == rear)
+    else if(front == rear)    // Check if there is only one element
     {
         front=rear=-1;
     }
     else
     {
        printf("%d ", que[front]);
-        front= (front+1)%N;
+        front= (front+1)%N;     // Circular increment of front
     }
    
 }
@@ -63,7 +63,7 @@ void print()
     }
     else
     {
-        while (i != rear)
+        while (i != rear)   // Loop to print elements from front to rear
         {
             printf("%d ",que[i]);
             i = (i+1)%N;
